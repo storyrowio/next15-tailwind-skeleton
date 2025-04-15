@@ -24,14 +24,13 @@ export default function AppLayout() {
     });
 
     const overlayClassNames = classNames({
-        'w-screen h-screen bg-black absolute z-[6] transition-[opacity] duration-300 ease-in-out': true,
-        'opacity-0': desktop || (!desktop && !sidebarOpen),
+        'w-screen h-screen bg-black absolute z-[6] transition-all duration-300 ease-in-out': true,
+        'hidden': desktop || (!desktop && !sidebarOpen),
         'opacity-50': !desktop && sidebarOpen,
-        'hidden': desktop
     });
 
     return (
-        <main className="w-screen h-screen bg-neutral-100">
+        <main className="w-screen h-screen bg-neutral-50">
             <div className={overlayClassNames} onClick={() => setSidebarOpen(!sidebarOpen)}/>
             <AppSidebar
                 sidebarWidth={sidebarWidth}

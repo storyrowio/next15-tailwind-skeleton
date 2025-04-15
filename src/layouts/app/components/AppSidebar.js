@@ -4,6 +4,7 @@ import classNames from "classnames";
 import useMediaQuery from "hooks/useMediaQuery";
 import Logo from "components/shared/Logo";
 import {ArrowLeft01Icon} from "hugeicons-react";
+import IconButton from "components/ui/buttons/IconButton";
 
 export default function AppSidebar(props) {
     const { sidebarWidth, miniSidebarWidth, open, onToggleSidebar } = props;
@@ -25,11 +26,9 @@ export default function AppSidebar(props) {
                 style={{ width: !open ? desktop ? miniSidebarWidth : 0 : sidebarWidth }}>
                 <div className="h-16 flex items-center justify-between relative">
                     <Logo icon={isMiniSidebar} className="ml-2"/>
-                    <button
-                        className="p-1.5 rounded-xl bg-white border border-neutral-300 absolute -right-[16px] top-[20px] z-8 cursor-pointer"
-                        onClick={onToggleSidebar}>
-                        <ArrowLeft01Icon size={18} className={`text-neutral-600 ${open ? 'rotate-180' : ''}`}/>
-                    </button>
+                    <IconButton className="absolute -right-[16px] top-[16px] z-8 " onClick={onToggleSidebar}>
+                        <ArrowLeft01Icon size={18} className={`text-neutral-500 ${!open ? 'rotate-180' : ''}`}/>
+                    </IconButton>
                 </div>
             </div>
 
