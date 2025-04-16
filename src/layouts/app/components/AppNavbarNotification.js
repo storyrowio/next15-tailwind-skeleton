@@ -58,14 +58,14 @@ export default function AppNavbarNotification() {
 
     return (
         <div className="dropdown dropdown-end">
-            <div className="flex items-center">
+            <div className="h-full flex items-center">
                 <IconButton tabIndex={0} role="button" className="!p-2.5 !rounded-full">
                     <Notification01Icon size={18} className="text-neutral-500"/>
                 </IconButton>
             </div>
             <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content w-80 bg-base-100 rounded-box z-1 mt-6 w-52 p-2 shadow-xl/2 border border-neutral-200">
+                className="menu menu-sm dropdown-content w-96 bg-base-100 rounded-box z-1 mt-6 w-52 p-2 shadow-xl/2 border border-neutral-200">
                 {notifications.map((e, i) => {
                     const Icon = NotificationIcons[e.type].icon;
                     const bgColor = NotificationIcons[e.type].bgColor;
@@ -76,25 +76,25 @@ export default function AppNavbarNotification() {
                     })
 
                     return (
-                        <li key={i} className="flex-row flex-nowrap gap-4">
-                            <div className={iconClassNames}>
-                                <Icon className={textColor}/>
-                            </div>
-                            <div className="flex flex-col">
-                                <p className="font-bold">{e.title}</p>
-                                <p>{e.content}</p>
+                        <li key={i}>
+                            <div className="mt-2 flex-row flex-nowrap gap-4">
+                                <div className={iconClassNames}>
+                                    <Icon className={textColor}/>
+                                </div>
+                                <div className="flex flex-col">
+                                    <p className="font-bold">{e.title}</p>
+                                    <p>{e.content}</p>
+                                </div>
                             </div>
                         </li>
                     )
                 })}
                 <li>
-                    <a className="justify-between">
-                        Profile
-                        <span className="badge">New</span>
-                    </a>
+                    <div className="h-0.25 w-full p-0 my-2 bg-neutral-200"/>
+                    <div className="py-2.5 rounded-md flex justify-center text-primary-600 text-md font-semibold">
+                        See All Notification
+                    </div>
                 </li>
-                <li><a>Settings</a></li>
-                <li><a>Logout</a></li>
             </ul>
         </div>
     )

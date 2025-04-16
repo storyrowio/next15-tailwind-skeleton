@@ -2,6 +2,7 @@ import {Geist, Geist_Mono, Plus_Jakarta_Sans} from "next/font/google";
 import "./globals.css";
 import "./style.css";
 import AppLayout from "layouts/app/AppLayout";
+import BaseLayout from "layouts/BaseLayout";
 
 const plusJakarta = Plus_Jakarta_Sans({
     weight: ['400', '500', '600', '700', '800'],
@@ -19,9 +20,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={plusJakarta.className}>
-        <AppLayout>
+        <BaseLayout>
             {children}
-        </AppLayout>
+        </BaseLayout>
       </body>
     </html>
   );
