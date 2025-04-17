@@ -1,8 +1,8 @@
-import {Geist, Geist_Mono, Plus_Jakarta_Sans} from "next/font/google";
+import {Plus_Jakarta_Sans} from "next/font/google";
 import "./globals.css";
 import "./style.css";
-import AppLayout from "layouts/app/AppLayout";
 import BaseLayout from "layouts/BaseLayout";
+import 'simplebar-react/dist/simplebar.min.css';
 
 const plusJakarta = Plus_Jakarta_Sans({
     weight: ['400', '500', '600', '700', '800'],

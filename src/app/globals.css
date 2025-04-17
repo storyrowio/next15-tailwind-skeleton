@@ -3,7 +3,7 @@
 @plugin "daisyui";
 
 :root {
-  --background: #F9FAFB;
+  --background: #f1f5f9;
   --foreground: #171717;
   --font-jakarta: "Plus Jakarta Sans", sans-serif;
 }
@@ -41,13 +41,49 @@ body {
 }
 
 .sidebar {
+  .collapse {
+    input, .collapse-title {
+      max-height: 40px;
+      min-height: 40px;
+      padding: 0;
+    }
+  }
+
   .menu {
+    & :where(li > details) {
+      /*@apply max-h-[500px] transition-[max-height] duration-3000 ease-in-out;*/
+      max-width: 500px;
+      box-sizing: border-box;
+      margin-top: 5px;
+      background: white;
+      transition: max-height 400ms ease-out;
+
+      max-height: 4rem; /* Set a max-height value just enough to show the summary content */
+      overflow: hidden;
+    }
+
     :where(li > details > summary) {
       @apply active:bg-primary-500;
     }
 
+    & :where(li) {
+      & > :not(ul, .menu-title, details, .btn):active,
+      & > :not(ul, .menu-title, details, .btn).menu-active,
+      & > details > summary:active {
+        @apply active:bg-primary-500;
+      }
+    }
+
     & :where(li ul) {
-      &:before { @apply hidden }
+      @apply transition-all duration-3000 ease-in-out;
+
+      &:before { @apply w-0.5 rounded-md }
+    }
+
+    & :where(li > details > summary), & :where(li > .menu-dropdown-toggle) {
+      &:after {
+        display: none;
+      }
     }
   }
 }

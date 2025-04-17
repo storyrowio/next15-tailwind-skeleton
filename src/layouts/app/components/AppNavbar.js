@@ -13,7 +13,7 @@ export default function AppNavbar(props) {
     const { desktop } = useMediaQuery();
 
     const navbarClassnames = classNames({
-        'h-16 px-4 lg:px-10 bg-white border-b border-neutral-200 flex items-center': true,
+        'h-16 min-w-screen px-4 lg:px-10 fixed z-[5] bg-white border-b border-neutral-200 flex items-center': true,
     });
 
     return (
