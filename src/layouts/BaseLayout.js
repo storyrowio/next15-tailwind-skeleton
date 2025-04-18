@@ -4,10 +4,15 @@ import {Provider} from "react-redux";
 import store from "store";
 import {usePathname} from "next/navigation";
 import AppLayout from "layouts/app/AppLayout";
+import AuthLayout from "layouts/auth/AuthLayout";
 
 const RootApp = ({ children }) => {
     const pathname = usePathname();
-    const Layout = AppLayout;
+    let Layout = AuthLayout;
+
+    if (pathname.includes('/app')) {
+        Layout = AppLayout;
+    }
 
     return (
         <Layout>

@@ -57,7 +57,7 @@ export default function AppSidebarItem(props) {
 
     if (item.children) {
         return (
-            <div>
+            <div className="w-full">
                 <div className={itemClassNames} onClick={() => dispatch(ThemeActions.setActiveSidebarGroupMenu(item.id))}>
                     <ItemContent/>
                 </div>
