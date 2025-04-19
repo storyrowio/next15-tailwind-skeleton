@@ -1,11 +1,15 @@
 @import "tailwindcss";
+@import "flowbite/src/themes/default";
+@plugin "flowbite/plugin";
 
 @plugin "daisyui" {
     themes: light --default
 }
 
+@source "../node_modules/flowbite";
+
 :root {
-  --background: #f1f5f9;
+  --background: #F9FAFB;
   --foreground: #171717;
   --font-jakarta: "Plus Jakarta Sans", sans-serif;
 }

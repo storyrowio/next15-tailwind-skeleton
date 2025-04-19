@@ -16,10 +16,10 @@ export default function AppLayout({ children }) {
     const [sidebarOpen, setSidebarOpen] = useState(true);
     const isMiniSidebar = desktop && !sidebarOpen;
 
-    let contentClass = isMiniSidebar ? 'pl-[80px]' : 'pl-[240px]';
+    let contentClass = isMiniSidebar ? 'pl-18' : 'pl-56';
 
     const contentClassNames = classNames({
-        'pt-[64px] transition-[width, margin] duration-300 ease-in-out': true,
+        'min-h-screen pt-[64px] transition-[width, margin] duration-300 ease-in-out': true,
         [contentClass]: desktop
     });
 
@@ -28,43 +28,6 @@ export default function AppLayout({ children }) {
         'hidden': desktop || (!desktop && !sidebarOpen),
         'opacity-50': !desktop && sidebarOpen,
     });
-
-    // return (
-    //     <div>
-    //         <div className="w-72 h-screen fixed z-10 bg-neutral-200">
-    //             <h1>Sidebar</h1>
-    //             <IconButton
-    //                 className="absolute -right-[20px]">
-    //                 <Menu02Icon/>
-    //             </IconButton>
-    //         </div>
-    //         <div className="w-screen h-14 fixed bg-base-300">
-    //             <h1>Navbar</h1>
-    //         </div>
-    //         <div className="min-h-screen pt-14 pl-72 bg-primary-100">
-    //             <div className="p-6">
-    //                 <h1 className="text-5xl">Content</h1>
-    //                 <h1 className="text-5xl">Content</h1>
-    //                 <h1 className="text-5xl">Content</h1>
-    //                 <h1 className="text-5xl">Content</h1>
-    //                 <h1 className="text-5xl">Content</h1>
-    //                 <h1 className="text-5xl">Content</h1>
-    //                 <h1 className="text-5xl">Content</h1>
-    //                 <h1 className="text-5xl">Content</h1>
-    //                 <h1 className="text-5xl">Content</h1>
-    //                 <h1 className="text-5xl">Content</h1>
-    //                 <h1 className="text-5xl">Content</h1>
-    //                 <h1 className="text-5xl">Content</h1>
-    //                 <h1 className="text-5xl">Content</h1>
-    //                 <h1 className="text-5xl">Content</h1>
-    //                 <h1 className="text-5xl">Content</h1>
-    //                 <h1 className="text-5xl">Content</h1>
-    //                 <h1 className="text-5xl">Content</h1>
-    //                 <h1 className="text-5xl">Content</h1>
-    //             </div>
-    //         </div>
-    //     </div>
-    // )
 
     return (
         <div>
@@ -81,7 +44,7 @@ export default function AppLayout({ children }) {
 
 
             <div className={contentClassNames}>
-                <div className="p-6">
+                <div className="p-5 md:p-8">
                     {children}
                 </div>
             </div>
