@@ -16,16 +16,16 @@ export default function Breadcrumb(props) {
 
                 if (i < items.length - 1) {
                     return (
-                        <>
+                        <div key={i} className="flex items-center gap-2">
                             <p className={titleClassName}>{e.title}</p>
                             <svg width="4" height="4" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="2" cy="2" r="2" fill="#98A2B3"/>
                             </svg>
-                        </>
+                        </div>
                     )
                 }
 
-                return <p className={titleClassName}>{e.title}</p>
+                return <p key={i}  className={titleClassName}>{e.title}</p>
             })}
         </div>
     )

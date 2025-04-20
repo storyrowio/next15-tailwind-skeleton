@@ -78,49 +78,8 @@ body {
     @apply rounded-lg border border-neutral-300 shadow/3;
 }
 
-.sidebar {
-  .collapse {
-    input, .collapse-title {
-      max-height: 40px;
-      min-height: 40px;
-      padding: 0;
-    }
-  }
-
-  .menu {
-    & :where(li > details) {
-      max-width: 500px;
-      box-sizing: border-box;
-      margin-top: 5px;
-      background: white;
-      transition: max-height 400ms ease-out;
-
-      max-height: 4rem; /* Set a max-height value just enough to show the summary content */
-      overflow: hidden;
-    }
-
-    :where(li > details > summary) {
-      @apply active:bg-primary-500;
-    }
-
-    & :where(li) {
-      & > :not(ul, .menu-title, details, .btn):active,
-      & > :not(ul, .menu-title, details, .btn).menu-active,
-      & > details > summary:active {
-        @apply active:bg-primary-500;
-      }
-    }
-
-    & :where(li ul) {
-      @apply transition-all duration-3000 ease-in-out;
-
-      &:before { @apply w-0.5 rounded-md }
-    }
-
-    & :where(li > details > summary), & :where(li > .menu-dropdown-toggle) {
-      &:after {
-        display: none;
-      }
-    }
+@utility avatar-group {
+  :where(.avatar) {
+    @apply border-[3px];
   }
 }
